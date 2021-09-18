@@ -1,3 +1,5 @@
+[![Weather-Bit](https://circleci.com/gh/punarjit-singh/weatherbit-api-tests.svg?style=svg)](https://app.circleci.com/pipelines/github/punarjit-singh/weatherbit-api-tests)
+
 ## Running the tests:
     mvn test -Dkarate.env=prod      #run all prod weatherbit tests in parallel
     mvn test -Dtest=WeatherBitTest  #run all weatherbit tests in parallel for default env
