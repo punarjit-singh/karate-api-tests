@@ -30,3 +30,9 @@ If tests need to sit inside the app codebase, we can use the conventional java f
 Basic circle ci config has been setup for this project but it can be extented to excute custom commands via the `circleci/maven@1.2.0` orb or custom configuration using docker executors. 
 
 ![CircleCI Sample Snapshot](/circleci.png)
+
+### Further Improvements/Todos
+- Running all tests using WeatherBitTest class generates a summary that shows test count as 1. This can be improved to show actual test count in CircleCI.
+- Reporting artifacts can be uploaded to CircleCI and reports can be made available throught its CircleCI app.
+- Depending on the nature of the actual project/api, folder structure can be adjusted accordingly to fit project needs.
+- Karate logging can be improved.
