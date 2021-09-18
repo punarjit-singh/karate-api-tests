@@ -4,21 +4,39 @@ Feature: Current weather for given postcode
     * url baseUrl + '/current'
     * param key = apiKey
 
+    # to demo schema validation of the inner weather object
+    * def weatherSchema = { icon: '#string', code: '#number', description: '#string' }
+
+    # for scenario outlines we can load test data through json but just using example table for demo
+    # * def postal_code = read('./postal_code.json')
+
   Scenario Outline: given postcode <postal_code>, validate current weather
     Given params {postal_code:<postal_code>}
     When method get
     Then status 200
 
-    #Demonstrating different kinds of assertions...
-    And match each $.data contains { lat: '#ignore', city_name: <city_name>, country_code: <country_code> }
-    And match each $.data contains { wind_spd: '#notnull', wind_dir: '#number', station: '#string' }
-    And match $.data[0].weather contains { icon: '#notnull', code: '#number', description: '#string', rh: '#ignore' }
+    And match each $.data contains
+    """
+    {
+      lat: '#ignore',
+      city_name: <city_name>,
+      country_code: <country_code>,
+      wind_spd: '#notnull',
+      wind_dir: '#number',
+      station: '#string'
+    }
+    """
+
+    #Schema validation for inner weather object
+    And match $.data[0].weather == '#(weatherSchema)'
     And match $.count == 1
 
     #Add more assertions similarly,
       # if mock server setup available even exact response json can be matched directly...
 
     Examples:
+#      | postal_code   |      if using json data from line 6
+
       | country_code  | city_name       | postal_code   |
       | US            | Lake Monticello | 22963         |
       | AU            | Maroubra        | 2035          |

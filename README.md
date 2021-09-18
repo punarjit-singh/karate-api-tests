@@ -1,8 +1,12 @@
 ## Running the tests:
-    mvn test -Dkarate.env=prod
+    mvn test -Dkarate.env=prod      #run all weatherbit tests in parallel
+    mvn test -Dtest=CurrentRunner   #run only /current weather tests (for local dev)
+    
 
 ## Folder Structure
 Note: The folder structure is kept simpler on purpose based on an assumption that these tests will sit outside of actual app code, hence the `com.mycompany.foo.bar` convention and the addition of conventional sub-folders isn't done. The folder hierarchy is only one or two levels deep for demo purposes - where the folder names identify the API under test.
+
+(Also recommended by Karate's official guide)
 
     - ~/src/test/java
         - weatherbit
