@@ -1,5 +1,6 @@
 ## Running the tests:
-    mvn test -Dkarate.env=prod      #run all weatherbit tests in parallel
+    mvn test -Dkarate.env=prod      #run all prod weatherbit tests in parallel
+    mvn test -Dtest=WeatherBitTest  #run all weatherbit tests in parallel for default env
     mvn test -Dtest=CurrentRunner   #run only /current weather tests (for local dev)
     
 
