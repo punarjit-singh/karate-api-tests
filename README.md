@@ -23,3 +23,5 @@ If tests need to sit inside the app codebase, we can use the conventional java f
 
 ### CircleCI
 Basic circle ci config has been setup for this project but it can be extented to excute custom commands via the `circleci/maven@1.2.0` orb or custom configuration using docker executors. 
+
+![CircleCI Sample Snapshot](/circleci.png)
