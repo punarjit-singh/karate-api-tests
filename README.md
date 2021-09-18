@@ -36,3 +36,5 @@ Basic circle ci config has been setup for this project but it can be extented to
 - Reporting artifacts can be uploaded to CircleCI and reports can be made available throught its CircleCI app.
 - Depending on the nature of the actual project/api, folder structure can be adjusted accordingly to fit project needs.
 - Karate logging can be improved.
+- Continuous improvements to the framework, including adding test tagging support.
+- Move API keys to secure key-vault or masked CI configs.
